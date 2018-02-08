@@ -180,6 +180,7 @@
   //     return total + number * number;
   //   }); // should be 5, regardless of the iterator function passed in
   //          No accumulator is given so the first element is used.
+<<<<<<< HEAD
   _.reduce = function (collection, iterator, accumulator) {
 
     if (accumulator === undefined) {
@@ -192,6 +193,18 @@
         accumulator = iterator(accumulator, el);
       });
     }
+=======
+  _.reduce = function(collection, iterator, accumulator) {
+    // Iterate through the collection
+    _.each(collection, function(el) {
+      // Set accumulator to first el if it is undefined
+      if (accumulator === undefined) {
+        accumulator = el;
+      } else {
+        accumulator = iterator(accumulator, el);
+      }
+    });
+>>>>>>> 59b8d3fb0003f14b2f86019f36c3ef6d47d14624
 
     return accumulator;
   };
@@ -212,9 +225,12 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
+<<<<<<< HEAD
     return _.reduce(collection, function () {
 
     })
+=======
+>>>>>>> 59b8d3fb0003f14b2f86019f36c3ef6d47d14624
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
